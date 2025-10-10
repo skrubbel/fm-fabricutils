@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fabricutils"
+version = "0.1.0"
+description = "Utility functions for Microsoft Fabric notebooks"
+authors = [{ name = "Jan Poulsen Skrubbeltrang", email = "jan@skrubbeltrang.net" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
