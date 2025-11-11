@@ -1,0 +1,77 @@
+# DEV Settings
+# ==================================================
+dev-fws-entp-etl|raw_lh_enterprisedata|lzd365fo_to_raw:
+  source_workspace: dev-fws-lz-d365fo
+  source_lakehouse: dataverse_nftest1_cds2_workspace_unqb79d792caad6ec1182f0000d3abb4
+  target_workspace: dev-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+dev-fws-entp-etl|raw_lh_enterprisedata|lzentpdata_to_raw:
+  source_workspace: dev-fws-lz-entp-data
+  source_lakehouse: lh_lz_enterprisedata
+  target_workspace: dev-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+dev-fws-entp-etl|raw_lh_enterprisedata|raw_to_enriched:
+  source_workspace: dev-fws-entp-etl
+  source_lakehouse: raw_lh_enterprisedata
+  target_workspace: dev-fws-entp-etl
+  target_lakehouse: enriched_lh_enterprisedata
+
+dev-fws-entp-etl|raw_lh_enterprisedata|enriched_to_curated:
+  source_workspace: dev-fws-entp-etl
+  source_lakehouse: enriched_lh_enterprisedata
+  target_workspace: dev-fws-entp-endpt
+  target_lakehouse: curated_lh_enterprisedata
+
+# UAT Settings
+# ==================================================
+uat-fws-entp-etl|raw_lh_enterprisedata|lzd365fo_to_raw:
+  source_workspace: dev-fws-lz-d365fo
+  source_lakehouse: dataverse_nftest1_cds2_workspace_unqb79d792caad6ec1182f0000d3abb4
+  target_workspace: uat-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+uat-fws-entp-etl|raw_lh_enterprisedata|lzentpdata_to_raw:
+  source_workspace: uat-fws-lz-entp-data
+  source_lakehouse: lh_lz_enterprisedata
+  target_workspace: uat-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+uat-fws-entp-etl|raw_lh_enterprisedata|raw_to_enriched:
+  source_workspace: uat-fws-entp-etl
+  source_lakehouse: raw_lh_enterprisedata
+  target_workspace: uat-fws-entp-etl
+  target_lakehouse: enriched_lh_enterprisedata
+
+uat-fws-entp-etl|raw_lh_enterprisedata|enriched_to_curated:
+  source_workspace: uat-fws-entp-etl
+  source_lakehouse: enriched_lh_enterprisedata
+  target_workspace: uat-fws-entp-endpt
+  target_lakehouse: curated_lh_enterprisedata
+
+# PROD Settings
+# ==================================================
+prod-fws-entp-etl|raw_lh_enterprisedata|lzd365fo_to_raw:
+  source_workspace: dev-fws-lz-d365fo
+  source_lakehouse: dataverse_nftest1_cds2_workspace_unqb79d792caad6ec1182f0000d3abb4
+  target_workspace: prod-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+prod-fws-entp-etl|raw_lh_enterprisedata|lzentpdata_to_raw:
+  source_workspace: prod-fws-lz-entp-data
+  source_lakehouse: lh_lz_enterprisedata
+  target_workspace: prod-fws-entp-etl
+  target_lakehouse: raw_lh_enterprisedata
+
+prod-fws-entp-etl|raw_lh_enterprisedata|raw_to_enriched:
+  source_workspace: prod-fws-entp-etl
+  source_lakehouse: raw_lh_enterprisedata
+  target_workspace: prod-fws-entp-etl
+  target_lakehouse: enriched_lh_enterprisedata
+
+prod-fws-entp-etl|raw_lh_enterprisedata|enriched_to_curated:
+  source_workspace: prod-fws-entp-etl
+  source_lakehouse: enriched_lh_enterprisedata
+  target_workspace: prod-fws-entp-endpt
+  target_lakehouse: curated_lh_enterprisedata

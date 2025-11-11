@@ -850,6 +850,7 @@ dev = [
     { name = "mimesis" },
     { name = "mypy" },
     { name = "pyspark" },
+    { name = "pyyaml" },
     { name = "semantic-link-labs" },
     { name = "semantic-link-sempy" },
 ]
@@ -874,6 +875,7 @@ dev = [
     { name = "mimesis", specifier = ">=18.0.0" },
     { name = "mypy" },
     { name = "pyspark" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "semantic-link-labs", specifier = ">=0.12.6" },
     { name = "semantic-link-sempy", specifier = ">=0.12.2" },
 ]

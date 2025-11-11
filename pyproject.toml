@@ -29,6 +29,7 @@ dev = [
     "mimesis>=18.0.0",
     "mypy",
     "pyspark",
+    "pyyaml>=6.0.3",
     "semantic-link-labs>=0.12.6",
     "semantic-link-sempy>=0.12.2",
 ]

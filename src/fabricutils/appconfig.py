@@ -5,36 +5,37 @@ from typing import Dict
 import notebookutils
 import json
 import os
+import yaml
 import sempy.fabric as fabric
 
 
 def _read_lakehouse_mappings(file_path: str = None) -> Dict:
-    """Read lakehouse mappings from lakehouse_mappings.json file
+    """Read lakehouse mappings from lakehouse_mappings.yaml file
 
     Args:
-        file_path (str, optional): Path to the lakehouse mappings JSON file.
-            If None, defaults to lakehouse_mappings.json in the same directory as this module.
+        file_path (str, optional): Path to the lakehouse mappings YAML file.
+            If None, defaults to lakehouse_mappings.yaml in the same directory as this module.
 
     Returns:
-        Dict: Parsed JSON data as dictionary
+        Dict: Parsed YAML data as dictionary
 
     Raises:
-        FileNotFoundError: If lakehouse_mappings.json file is not found
-        json.JSONDecodeError: If file contains invalid JSON
+        FileNotFoundError: If lakehouse_mappings.yaml file is not found
+        yaml.YAMLError: If file contains invalid YAML
     """
 
     try:
         if file_path is None:
-            file_path = os.path.join(os.path.dirname(__file__), "lakehouse_mappings.json")
+            file_path = os.path.join(os.path.dirname(__file__), "lakehouse_mappings.yaml")
 
         with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            return yaml.safe_load(f)
     except FileNotFoundError as e:
-        raise FileNotFoundError(f"lakehouse_mappings.json file not found: {e}")
-    except json.JSONDecodeError as e:
-        raise json.JSONDecodeError(f"Invalid JSON in lakehouse_mappings.json: {e}", e.doc, e.pos)
+        raise FileNotFoundError(f"lakehouse_mappings.yaml file not found: {e}")
+    except yaml.YAMLError as e:
+        raise yaml.YAMLError(f"Invalid YAML in lakehouse_mappings.yaml: {e}")
     except Exception as e:
-        raise Exception(f"Error reading lakehouse_mappings.json: {e}")
+        raise Exception(f"Error reading lakehouse_mappings.yaml: {e}")
 
 
 def get_current_lakehouse_name() -> str:
