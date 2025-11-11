@@ -10,4 +10,41 @@ authors = [{ name = "Jan Poulsen Skrubbeltrang", email = "jan@skrubbeltrang.net"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "openpyxl",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "pydantic",
+    "python-dotenv",
+    "pyyaml",
+]
+
+[dependency-groups]
+dev = [
+    "duckdb",
+    "dummy-notebookutils>=1.5.4",
+    "isort",
+    "jupyterlab",
+    "mimesis>=18.0.0",
+    "mypy",
+    "pyspark",
+    "semantic-link-labs>=0.12.6",
+    "semantic-link-sempy>=0.12.2",
+]
+
+# Import sorting
+[tool.isort]
+profile = "ruff"
+line_length = 100
+
+# Type checking
+[tool.mypy]
+python_version = "3.11.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+# Setup
+[tool.setuptools.packages.find]
+where = ["src"]
